@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <Login />
+    <div>
+      <Login />
+    </div>
   </div>
 </template>
 
@@ -11,7 +13,7 @@ import Login from "@/views/Login.vue";
 export default{
   name:"App",
   components:{
-    Login
+    Login,
   }
 }
 </script>

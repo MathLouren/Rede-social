@@ -1,23 +1,43 @@
 <template>
      <main class="login">
-    <div class="login__container">
-      <h1 class="login__title">Login</h1>
-      <form class="login__form">
-        <input class="login__input" type="email" placeholder="e-mail" />
-        <span class="login__input-border"></span>
-        <input class="login__input" type="password" placeholder="senha"/>
-        <span class="login__input-border"></span>
-        <button class="login__submit">Login</button>
-        <a class="login__reset" href="#">Esqueceu a senha?</a>
-        <button class="login__submit created">Novo? Criar conta</button>
+        <div class="login__container" v-if="statusCreated === true">
+        <h1 class="login__title">Login</h1>
+        <form class="login__form">
+          <input class="login__input" type="email" placeholder="e-mail" />
+          <span class="login__input-border"></span>
+          <input class="login__input" type="password" placeholder="senha"/>
+          <span class="login__input-border"></span>
+          <button class="login__submit">Login</button>
+          <a class="login__reset" href="#">Esqueceu a senha?</a>
+          <button class="login__submit" @click="statusCreated = false">Novo? Criar conta</button>
+        </form>
+      </div>
+    <div class="created_acc" v-else>
+      <div class="created_container">
+      <h1>Criar conta</h1>
+      <form class="created">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome">
+        <label for="email">Email</label>
+        <input type="text" name="email">
+        <label for="senha">Senha</label>
+        <input type="password" name="senha">
+        <button class="created__submit">Criar conta</button>
+        <button class="created__submit">Já possui conta? Logar</button>
       </form>
+      </div>
     </div>
   </main>
 </template>
 
 <script>
 export default {
-    name:"Login"
+    name:"Login",
+    data(){
+      return{
+        statusCreated:true,
+      }
+    },
 }
 </script>
 
@@ -38,7 +58,7 @@ export default {
 body {
   padding: 0;
   margin: 0;
-  font-family: sans-serif;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
 .login {
@@ -59,6 +79,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: login .3s forwards;
 }
 
 .login__title {
@@ -115,21 +136,20 @@ body {
 }
 
 .login__submit {
-  height: 48px;
-  width: 100%;
-  padding-left: 8px;
   outline: none;
-  position: relative;
   background: var(--button-linear);
   background-size: 200%;
   margin-bottom: 32px;
   color: var(--white);
   font-size: 16px;
-  font-weight: bold;
   border: unset;
   border-radius: 4px;
   cursor: pointer;
   transition: 0.5s ease;
+  padding: 10px 30px;
+  display: block;
+  font-family: 'Roboto',sans-serif;
+  letter-spacing: 0.1rem;
 }
 
 .login__submit:disabled {
@@ -156,8 +176,66 @@ body {
   margin-bottom: 30px;
 }
 
-.created{
-  width: 230px;
+/* Created acc */
+
+.created_container{
+  animation: login .3s forwards;
 }
+
+.created_acc h1{
+  font-size: 2.1rem;
+  text-align: center;
+}
+
+.created_acc label{
+  margin: 10px 0;
+  display: block;
+  font-size: 1.1rem;
+}
+
+.created_acc input{
+  padding: 15px 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  color: #303030;
+  width: 400px;
+  transition: 0.4s;
+}
+.created_acc input:focus{
+  transform: scale(1.1);
+}
+
+.created_acc button{
+  margin: 30px auto;
+  padding: 15px 30px;
+  letter-spacing: 0.1rem;
+}
+
+.created__submit{
+  display: block;
+  color: #fff;
+  background: var(--button-linear);
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.created__submit:hover{
+  transform: scale(1.1);
+}
+
+/* Animations */
+
+@keyframes login {
+  from {
+    transform: translate3d(0, -40px, 0);
+  }
+  to {
+    transform: translate3d(0,0px,0);
+  }
+}
+
 
 </style>
