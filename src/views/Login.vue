@@ -1,18 +1,18 @@
 <template>
-  <div class="container_login">
-      <div class="login">
-          <form>
-              <label for="email">Email</label>
-              <input type="text" name="email" id="email">
-              <label for="senha">Senha</label>
-              <input type="password" name="senha" id="senha">
-              <button>Entrar</button>
-          </form>
-          <div class="register">
-            <button>Novo? Crie sua conta aqui</button>
-          </div>
-      </div>
-  </div>
+     <main class="login">
+    <div class="login__container">
+      <h1 class="login__title">Login</h1>
+      <form class="login__form">
+        <input class="login__input" type="email" placeholder="e-mail" />
+        <span class="login__input-border"></span>
+        <input class="login__input" type="password" placeholder="senha"/>
+        <span class="login__input-border"></span>
+        <button class="login__submit">Login</button>
+        <a class="login__reset" href="#">Esqueceu a senha?</a>
+        <button class="login__submit created">Novo? Criar conta</button>
+      </form>
+    </div>
+  </main>
 </template>
 
 <script>
@@ -22,65 +22,142 @@ export default {
 </script>
 
 <style>
-    .container_login{
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: rgba(0, 0, 0, 0.9);
-    }
+ :root {
+  --input-linear: linear-gradient(120deg, #7c899b, #053ae9);
+  --input-error: red;
+  --button-linear: linear-gradient(120deg, #4a6588, #053ae9);
+  --button-disabled: #acacac;
+  --button-success: rgb(18, 151, 107);
+  --white: #fff;
+  --black: #303030;
+  --gray: #929292;
+  --light-gray: #cfcfcf;
+  --border-height: 1px;
+}
 
-    .login{
-       border: none;
-       min-height: 300px;
-       border-radius: 10px;
-       background-color: rgb(245, 245, 245);
-       padding: 20px;
-    }
+body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
 
-    label{
-        display: block;
-        color: rgb(36, 36, 36);
-        margin: 10px 5px;
-        font-size: 1.1rem;
-    }
+.login {
+  height: 100vh;
+  background: var(--input-linear);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    input{
-        width: 300px;
-        outline: none;
-        border: none;
-        border: 1px solid rgb(10, 92, 245);
-        color: rgb(36, 36, 36);
-        display: block;
-        border-radius: 5px;
-        padding: 10px 7px;
-        margin: 5px;
-        transition: 0.4s;
-        background-color: rgb(255, 252, 252);
-    }
-    input:focus{
-        transform: scale(1.1);
-    }
+.login__container {
+  min-height: 400px;
+  width: 350px;
+  background-color: var(--white);
+  box-sizing: border-box;
+  padding: 32px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-    button{
-        border: none;
-        padding: 10px 18px;
-        font-size: 1rem;
-        cursor: pointer;
-        border-radius: 5px;
-        color: #fff;
-        border: none;
-        background-color:rgb(10, 92, 245) ;
-        display: block;
-        margin: 20px auto;
-        transition: 0.4s;
-    }
-    button:hover{
-        transform: scale(1.1);
-    }
+.login__title {
+  margin-bottom: 32px;
+  color: var(--black);
+}
+
+.login__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login__input {
+  height: 48px;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 8px;
+  border: unset;
+  outline: none;
+  position: relative;
+}
+
+.login__input-border {
+  height: var(--border-height);
+  width: 100%;
+  margin-bottom: 16px;
+  background: var(--light-gray);
+  transition: .3s ease-in-out;
+}
+
+.login__input-border::after {
+  content: '';
+  display: block;
+  height: var(--border-height);
+  width: 0;
+  margin-bottom: 16px;
+  background: var(--input-linear);
+  transition: .3s ease-in-out;
+}
+
+.login__input:focus + .login__input-border::after {
+  width: 100%;
+}
+
+.login__input-border.error {
+  background: var(--input-error);
+}
+
+.login__input-border.error::after {
+  background: var(--input-error);
+}
+
+.login__submit {
+  height: 48px;
+  width: 100%;
+  padding-left: 8px;
+  outline: none;
+  position: relative;
+  background: var(--button-linear);
+  background-size: 200%;
+  margin-bottom: 32px;
+  color: var(--white);
+  font-size: 16px;
+  font-weight: bold;
+  border: unset;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.login__submit:disabled {
+  background: var(--button-disabled);
+  cursor: not-allowed;
+}
+
+.login__submit:hover {
+  background-position: right;
+}
+
+.login__submit.success {
+  background: var(--button-success);
+}
+
+.login__submit.error {
+  background: var(--input-error);
+}
+
+.login__reset {
+  font-size: 12px;
+  color: var(--gray);
+  text-decoration: none;
+  margin-bottom: 30px;
+}
+
+.created{
+  width: 230px;
+}
 
 </style>

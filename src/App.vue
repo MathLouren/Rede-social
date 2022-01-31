@@ -5,8 +5,7 @@
 </template>
 
 <script>
-/* import Header from "@/components/Header.vue";
-import Main from "@/components/Main.vue"; */
+
 import Login from "@/views/Login.vue";
 
 export default{
