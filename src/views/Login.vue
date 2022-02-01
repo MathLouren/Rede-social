@@ -16,12 +16,18 @@
       <div class="created_container">
       <h1>Criar conta</h1>
       <form class="created">
-        <label for="nome">Nome</label>
-        <input type="text" name="nome">
+        <div class="create_info">
+          <label for="nome">Nome</label>
+          <input type="text" name="nome">
+        </div>
+         <div class="create_info">
         <label for="email">Email</label>
         <input type="text" name="email">
+        </div>
+         <div class="create_info">
         <label for="senha">Senha</label>
         <input type="password" name="senha">
+        </div>
         <button class="created__submit">Criar conta</button>
         <button class="created__submit">Já possui conta? Logar</button>
       </form>
@@ -103,6 +109,7 @@ body {
   border: unset;
   outline: none;
   position: relative;
+  color: #000;
 }
 
 .login__input-border {
@@ -170,7 +177,7 @@ body {
 }
 
 .login__reset {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--gray);
   text-decoration: none;
   margin-bottom: 30px;
@@ -182,15 +189,24 @@ body {
   animation: login .3s forwards;
 }
 
+.created_acc{
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+}
+
 .created_acc h1{
   font-size: 2.1rem;
   text-align: center;
+  color: #303030;
+  margin: 0px 0 20px;
 }
 
 .created_acc label{
   margin: 10px 0;
   display: block;
   font-size: 1.1rem;
+  color: #303030;
 }
 
 .created_acc input{
@@ -201,6 +217,7 @@ body {
   color: #303030;
   width: 400px;
   transition: 0.4s;
+  border: 2px solid #303030;
 }
 .created_acc input:focus{
   transform: scale(1.1);
@@ -224,6 +241,17 @@ body {
 }
 .created__submit:hover{
   transform: scale(1.1);
+}
+
+.create_info{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 10px 0;
+}
+
+.create_info input{
+  margin-left: 30px;
 }
 
 /* Animations */
