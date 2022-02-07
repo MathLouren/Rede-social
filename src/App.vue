@@ -1,19 +1,15 @@
 <template>
   <div id="app">
-    <div>
-      <Login />
-    </div>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 
-import Login from "@/views/Login.vue";
 
 export default{
   name:"App",
   components:{
-    Login,
   }
 }
 </script>
@@ -26,7 +22,7 @@ export default{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: rgb(255, 255, 255);
+  color:darkslategray;
   font-family: "Roboto", sans-serif;
 }
 
@@ -37,5 +33,32 @@ ul{
 a{
   text-decoration: none;
 }
+
+label{
+  display: block;
+}
+
+input{
+  display: block;
+}
+
+.btn{
+  display: block;
+  margin: 10px auto;
+  padding: 12px 30px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  margin: auto;
+  cursor: pointer;
+  transition: 0.4s;
+  background-color: darkslategray;
+  color: #fff;
+  text-transform: uppercase;
+}
+.btn:hover{
+  transform: scale(1.1);
+}
+
 
 </style>
