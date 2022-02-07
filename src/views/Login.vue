@@ -43,9 +43,9 @@ export default {
 
     .login{
         background: #fff;
-        padding: 30px 25px;
+        padding: 40px 25px;
         border-radius: 5px;
-        box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.9);
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.9);
     }
 
     input{
@@ -53,7 +53,7 @@ export default {
         outline: none;
         padding: 10px;
         border-radius: 5px;
-        width: 400px;
+        width: 450px;
         margin: 15px 0;
         border: 1px solid darkslategray;
         font-size: 0.9rem;
