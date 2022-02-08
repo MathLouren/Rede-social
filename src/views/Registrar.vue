@@ -5,7 +5,7 @@
           <form>
               <input type="text" name="nome" placeholder="Nome" v-model="nome">
               <input type="text" name="email" placeholder="Email" v-model="email">
-              <input type="password" name="senha" placeholder="Senha" v-model="senha">
+              <input type="password" name="senha" placeholder="Senha" v-model="password">
               <button class="btn button">Criar conta</button>
               <router-link class="btn button" to="/">Já possui uma conta? Logar</router-link>
           </form>
@@ -14,14 +14,16 @@
 </template>
 
 <script>
+import { mapFields } from "@/helpers.js"
+
 export default {
     name:"Resgistrar",
-    data(){
-        return{
-            nome:"",
-            email:"",
-            senha:"",
-        }
+    computed:{
+        ...mapFields({
+            fields:["id","nome","email","password"],
+            base:"user",
+            mutation:"UPDATE_USER"
+        })
     }
 }
 </script>
