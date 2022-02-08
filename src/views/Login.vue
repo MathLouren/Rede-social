@@ -1,14 +1,13 @@
 <template>
   <section class="container_login">
       <div class="login">
-        <h2>Login</h2>
+        <h2 class="title">Login</h2>
             <form>
                 <input type="text" placeholder="Email" v-model="email">
                 <input type="password" placeholder="Password" v-model="password">
                 <button class="btn">Entrar</button>
                 <p class="esqueceu">Esqueceu a senha?</p>
-                <router-link class="btn criar" to="/registrar">Novo? Criar Conta</router-link>
-                
+                <router-link class="btn" to="/registrar">Novo? Criar Conta</router-link>  
             </form>
       </div>
   </section>
@@ -29,48 +28,21 @@ export default {
     .container_login{
         width: 100vw;
         height: 100vh;
-        background: rgba(0, 0, 0, 0.7);
+        background: darkslategray;
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    h2{
-        text-align: center;
-        margin-bottom: 30px;
-        font-size: 2rem;
-    }
-
     .login{
         background: #fff;
-        padding: 40px 25px;
+        padding: 30px 40px;
         border-radius: 5px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.9);
     }
-
-    input{
-        padding: 10px 15px;
-        outline: none;
-        padding: 10px;
-        border-radius: 5px;
-        width: 450px;
-        margin: 15px 0;
-        border: 1px solid darkslategray;
-        font-size: 0.9rem;
-    }
-    input::placeholder{
-        font-size: 1rem;
-    } 
 
     .esqueceu{
         text-align: center;
-        margin: 20px 0 0 0;
         cursor: pointer;
     }
 
-    .criar{
-        margin: 20px 0 0 0;
-        width: 100%;
-        text-align: center;
-    }
 </style>

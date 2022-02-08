@@ -39,12 +39,26 @@ label{
 }
 
 input{
-  display: block;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(30, 60, 90, 0.2);
+  padding: 20px;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.4s;
+  outline: none;
+  margin: 10px 0;
+  border: 1px solid  #fff;
+}
+input:focus{
+  border:1px solid darkslategray;
+}
+
+input::placeholder{
+  font-size: 1rem;
 }
 
 .btn{
   display: block;
-  margin: 10px auto;
   padding: 12px 30px;
   font-size: 1rem;
   border: none;
@@ -55,10 +69,17 @@ input{
   background-color: darkslategray;
   color: #fff;
   text-transform: uppercase;
+  margin: 20px auto;
+  text-align: center;
 }
 .btn:hover{
   transform: scale(1.1);
 }
 
+.title{
+  text-align: center;
+  font-size: 2.2rem;
+  margin: 10px 0 30px 0;
+}
 
 </style>
