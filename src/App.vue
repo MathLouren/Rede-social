@@ -18,68 +18,71 @@ export default{
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap');
 
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  color:darkslategray;
-  font-family: "Roboto", sans-serif;
-}
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color:darkslategray;
+    font-family: "Roboto", sans-serif;
+  }
 
-ul{
-  list-style: none;
-}
+  ul{
+    list-style: none;
+  }
 
-a{
-  text-decoration: none;
-}
+  a{
+    text-decoration: none;
+  }
 
-label{
-  display: block;
-}
+  label{
+    display: block;
+  }
 
-input{
-  width: 100%;
-  box-shadow: 0 4px 8px rgba(30, 60, 90, 0.2);
-  padding: 20px;
-  border: none;
-  border-radius: 4px;
-  transition: all 0.4s;
-  outline: none;
-  margin: 10px 0;
-  border: 1px solid  #fff;
-}
-input:focus{
-  border:1px solid darkslategray;
-}
+  input{
+    display: block;
+    width: 400px;
+    max-width: 100%;
+    box-shadow: 0 4px 8px rgba(30, 60, 90, 0.2);
+    padding: 20px;
+    border: none;
+    border-radius: 4px;
+    transition: all 0.4s;
+    outline: none;
+    margin: 10px 0;
+    border: 1px solid  #fff;
+    font-size: 1rem;
+  }
+  input:focus{
+    border:1px solid darkslategray;
+  }
 
-input::placeholder{
-  font-size: 1rem;
-}
+  input::placeholder{
+    font-size: 1rem;
+  }
 
-.btn{
-  display: block;
-  padding: 12px 30px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 5px;
-  margin: auto;
-  cursor: pointer;
-  transition: 0.4s;
-  background-color: darkslategray;
-  color: #fff;
-  text-transform: uppercase;
-  margin: 20px auto;
-  text-align: center;
-}
-.btn:hover{
-  transform: scale(1.1);
-}
+  .btn{
+    display: block;
+    padding: 12px 30px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    margin: auto;
+    cursor: pointer;
+    transition: 0.4s;
+    background-color: darkslategray;
+    color: #fff;
+    text-transform: uppercase;
+    margin: 20px auto;
+    text-align: center;
+  }
+  .btn:hover{
+    transform: scale(1.1);
+  }
 
-.title{
-  text-align: center;
-  font-size: 2.2rem;
-  margin: 10px 0 30px 0;
-}
+  .title{
+    text-align: center;
+    font-size: 2.2rem;
+    margin: 10px 0 30px 0;
+  }
 
 </style>

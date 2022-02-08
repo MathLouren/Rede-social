@@ -25,6 +25,7 @@ export default {
 </script>
 
 <style scoped>
+
     .container_login{
         width: 100vw;
         height: 100vh;
