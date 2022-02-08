@@ -3,9 +3,9 @@
       <div class="login">
         <h2 class="title">Login</h2>
             <form>
-                <input type="text" placeholder="Email" v-model="email">
-                <input type="password" placeholder="Password" v-model="password">
-                <button class="btn">Entrar</button>
+                <input type="text" placeholder="Email" v-model="login.email">
+                <input type="password" placeholder="Password" v-model="login.password">
+                <button class="btn" @click.prevent="entrar">Entrar</button>
                 <p class="esqueceu">Esqueceu a senha?</p>
                 <router-link class="btn" to="/registrar">Novo? Criar Conta</router-link>  
             </form>
@@ -17,8 +17,16 @@
 export default {
     data(){
         return{
-            email:"",
-            password:""
+            login:{
+                email:"",
+                password:""
+            }
+        }
+    },
+    methods:{
+        entrar(){
+            this.$store.dispatch("getUser", this.login.email)
+            this.$router.push({ name:"usuario" })
         }
     }
 }
