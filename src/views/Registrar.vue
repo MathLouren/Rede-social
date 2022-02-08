@@ -6,7 +6,7 @@
               <input type="text" name="nome" placeholder="Nome" v-model="nome">
               <input type="text" name="email" placeholder="Email" v-model="email">
               <input type="password" name="senha" placeholder="Senha" v-model="password">
-              <button class="btn button">Criar conta</button>
+              <button class="btn button" @click.prevent="criarUsuario">Criar conta</button>
               <router-link class="btn button" to="/">Já possui uma conta? Logar</router-link>
           </form>
       </div>
@@ -24,6 +24,17 @@ export default {
             base:"user",
             mutation:"UPDATE_USER"
         })
+    },
+    methods:{
+        async criarUsuario(){
+           try{
+            await this.$store.dispatch("criarUsuario", this.$store.state.user);
+            await this.$store.dispatch("getUsuario", this.$store.state.user.email);
+            this.$router.push({ name: "usuario" });
+           } catch(error){
+               console.log(error)
+           }
+        }
     }
 }
 </script>
