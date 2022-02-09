@@ -2,6 +2,7 @@
   <transition name="modal">
     <section class="usuario">
             <nav class="user_info">
+              <h2>Editar Usuário</h2>
               <UsuarioForm />
               <div>
                 <button class="btn editar" @click.prevent="atualizarUsuario">Editar Usuario</button>
@@ -38,7 +39,6 @@ export default {
 
   .usuario{
     width: 100vw;
-    height: 100vh;
     display: flex;
     justify-content: center;
     background-color: darkslategray;
@@ -46,9 +46,10 @@ export default {
   }
 
   .user_info{
+    display: block;
     margin-top: 20px;
-    background-color: darkslategray;
-    padding: 10px 10px;
+    background-color: #fff;
+    padding: 20px 50px;
     border-radius: 5px;
   }
 
@@ -61,7 +62,6 @@ export default {
     display: inline-block;
     margin: 10px 0;
     background: #fff;
-    color: darkslategray;
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
@@ -72,8 +72,14 @@ export default {
   }
   
   .editar{
-    background-color: #fff;
-    color: darkslategray;
+    background-color: darkslategray;
+    color: #fff;
+  }
+
+  .user_info h2{
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
   }
 
 </style>
