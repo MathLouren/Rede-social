@@ -2,28 +2,20 @@
   <section class="container_resgister">
       <div class="resgister">
           <h2 class="title">Registrar</h2>
-          <form>
-              <input type="text" name="nome" placeholder="Nome" v-model="nome">
-              <input type="text" name="email" placeholder="Email" v-model="email">
-              <input type="password" name="senha" placeholder="Senha" v-model="password">
-              <button class="btn button" @click.prevent="criarUsuario">Criar conta</button>
-              <router-link class="btn button" to="/">Já possui uma conta? Logar</router-link>
-          </form>
+            <UsuarioForm />
+            <button class="btn button" @click.prevent="criarUsuario">Criar conta</button>
+            <router-link class="btn button" to="/">Já possui uma conta? Logar</router-link>
       </div>
   </section>
 </template>
 
 <script>
-import { mapFields } from "@/helpers.js"
+import UsuarioForm from "@/components/UsuarioForm.vue"
 
 export default {
     name:"Resgistrar",
-    computed:{
-        ...mapFields({
-            fields:["id","nome","email","password"],
-            base:"user",
-            mutation:"UPDATE_USER"
-        })
+    components:{
+        UsuarioForm
     },
     methods:{
         async criarUsuario(){
@@ -40,6 +32,10 @@ export default {
 </script>
 
 <style scoped>
+
+body{
+    background-color: darkslategray;
+}
 
 .container_resgister{
     width: 100vw;

@@ -24,12 +24,11 @@ export default{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color:darkslategray;
     font-family: "Roboto", sans-serif;
   }
   body{
-    background: darkslategray;
     overflow: hidden;
+    background-color: darkslategray;
   }
 
   ul{

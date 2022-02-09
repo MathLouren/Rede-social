@@ -10,7 +10,7 @@ export default new Vuex.Store({
     login:false,
     user:{
       id:"",
-      nome:"",
+      name:"",
       email:"",
       password:""
     }

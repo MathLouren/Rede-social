@@ -34,6 +34,7 @@ export default {
 
 <style scoped>
 
+
     .container_login{
         width: 100vw;
         height: 100vh;
