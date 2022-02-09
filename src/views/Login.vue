@@ -1,10 +1,10 @@
 <template>
   <section class="container_login">
       <div class="login">
-        <h2 class="title">Login</h2>
+            <h2 class="title">Login</h2>
             <form>
                 <input type="text" placeholder="Email" v-model="login.email">
-                <input type="password" placeholder="Password" v-model="login.password">
+                <input type="password" placeholder="Senha" v-model="login.password">
                 <button class="btn" @click.prevent="entrar">Entrar</button>
                 <p class="esqueceu">Esqueceu a senha?</p>
                 <router-link class="btn" to="/registrar">Novo? Criar Conta</router-link>  

@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <transition name="modal">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
@@ -25,6 +27,10 @@ export default{
     color:darkslategray;
     font-family: "Roboto", sans-serif;
   }
+  body{
+    background: darkslategray;
+    overflow: hidden;
+  }
 
   ul{
     list-style: none;
@@ -42,7 +48,7 @@ export default{
     display: block;
     width: 400px;
     max-width: 100%;
-    box-shadow: 0 4px 8px rgba(30, 60, 90, 0.2);
+    box-shadow: 4px 4px 8px rgba(30, 60, 90, 0.2);
     padding: 20px;
     border: none;
     border-radius: 4px;
@@ -84,5 +90,18 @@ export default{
     font-size: 2.2rem;
     margin: 10px 0 30px 0;
   }
+
+ /*  Animations */
+ 
+  .modal-enter,
+  .modal-leave-to{
+    opacity: 0;
+  }
+
+  .modal-enter-active,
+  .modal-leave-to{
+    transition: opacity 0.3s;
+  }
+
 
 </style>
