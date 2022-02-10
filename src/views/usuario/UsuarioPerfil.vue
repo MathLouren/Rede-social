@@ -34,7 +34,7 @@ export default {
 }
 
 .banner{
-  margin: 10px auto;
+  margin: 20px auto;
   width: 60%;
   height: 200px;
   border: 1px solid #000;
@@ -50,6 +50,7 @@ export default {
   bottom: 0;
   margin-bottom: -50px;
   margin-left: 10px;
+  cursor: pointer;
 }
 
 .desc{
