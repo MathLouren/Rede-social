@@ -49,4 +49,10 @@ export default {
         cursor: pointer;
     }
 
+    .login{
+        padding: 40px;
+        box-shadow: 4px 4px 8px rgba(30, 60, 90, 0.4);
+        border-radius: 5px;
+    }
+
 </style>

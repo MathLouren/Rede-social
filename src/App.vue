@@ -55,7 +55,7 @@ export default{
   input{
     display: block;
     width: 400px;
-    box-shadow: 4px 4px 8px rgba(30, 60, 90, 0.6);
+    box-shadow: 4px 4px 8px rgba(30, 60, 90, 0.4);
     padding: 20px;
     border: none;
     border-radius: 4px;
