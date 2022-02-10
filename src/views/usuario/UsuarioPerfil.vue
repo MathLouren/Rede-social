@@ -21,7 +21,7 @@ export default {
 
 .banner{
   margin: 10px;
-  width: 800px;
+  width: 50%;
   height: 200px;
   border: 1px solid #000;
 }

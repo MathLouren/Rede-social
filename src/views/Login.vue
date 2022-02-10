@@ -36,18 +36,12 @@ export default {
 
 
     .container_login{
-        width: 100vw;
+        width: 100%;
         height: 100vh;
-        background: darkslategray;
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-
-    .login{
-        background: #fff;
-        padding: 30px 40px;
-        border-radius: 5px;
+        color: darkslategray;
     }
 
     .esqueceu{

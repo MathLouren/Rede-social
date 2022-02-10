@@ -39,7 +39,7 @@ export default {
 
 .slidenav{
   padding: 0 10px;
-  width: 10%;
+  width: 15%;
   display: flex;
 }
 

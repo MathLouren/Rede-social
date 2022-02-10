@@ -45,7 +45,6 @@ export default {
 
   .user_info{
     display: block;
-    margin-top: 20px;
     background-color: #fff;
     padding: 20px 50px;
     border-radius: 5px;

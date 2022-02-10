@@ -20,6 +20,11 @@ export default{
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap');
 
+  #app{
+    margin: auto;
+    width: 80vw;
+  }
+
   *{
     margin: 0;
     padding: 0;
@@ -50,7 +55,7 @@ export default{
   input{
     display: block;
     width: 400px;
-    box-shadow: 4px 4px 8px rgba(30, 60, 90, 0.2);
+    box-shadow: 4px 4px 8px rgba(30, 60, 90, 0.6);
     padding: 20px;
     border: none;
     border-radius: 4px;
@@ -104,9 +109,17 @@ export default{
     opacity: 0;
   }
 
-  .modal-enter-active,
+  .modal-enter{
+    transform: translate3d(0,-10px,0);
+  }
+
   .modal-leave-to{
-    transition: opacity 0.3s;
+    transform: translate3d(0,0px,0);
+  }
+
+  .modal-enter-active,
+  .modal-leave-active{
+    transition: all 0.2s;
   }
 
 
