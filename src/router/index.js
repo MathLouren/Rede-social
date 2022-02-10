@@ -3,7 +3,9 @@ import VueRouter from 'vue-router'
 import Login from '../views/Login.vue'
 import Registrar from '../views/Registrar.vue'
 import Usuario from '../views/usuario/Usuario.vue'
-
+import UsuarioPerfil from '../views/usuario/UsuarioPerfil.vue'
+import EditarUsuario from '../views/usuario/EditarUsuario.vue'
+import Notifications from '../views/usuario/Notifications.vue'
 
 Vue.use(VueRouter)
 
@@ -13,7 +15,7 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: "/",
+      path: "",
       name:"Login",
       component: Login
     },
@@ -25,7 +27,24 @@ const router = new VueRouter({
     {
       path: "/usuario",
       name:"usuario",
-      component: Usuario
+      component: Usuario,
+      children:[
+        {
+          path:"profile",
+          name:"perfil",
+          component:UsuarioPerfil
+        },
+        {
+          path:"edit_user",
+          name:"usuario",
+          component:EditarUsuario
+        },
+        {
+          path:"notifications",
+          name:"notifications",
+          component:Notifications
+        }
+      ]
     },
   ]
 })

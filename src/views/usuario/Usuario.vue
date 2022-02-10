@@ -1,85 +1,44 @@
 <template>
-  <transition name="modal">
-    <section class="usuario">
-            <nav class="user_info">
-              <h2>Editar Usuário</h2>
-              <UsuarioForm />
-              <div>
-                <button class="btn editar" @click.prevent="atualizarUsuario">Editar Usuario</button>
-              </div>
-            </nav>
-    </section>
-  </transition>
+  <section class="usuario">
+    <nav class="slidenav">
+      <ul>
+         <li>
+          <router-link :to="{ name: 'perfil' }">Meu perfil</router-link>
+        </li>
+        <li>
+          <router-link :to="{ name: 'usuario' }">Editar Usuario</router-link>
+        </li>
+        <li>
+          <router-link :to="{ name: 'notifications' }">Notificações</router-link>
+        </li>
+        <li>
+          <button @click.prevent="deslogar">Deslogar</button>
+        </li>
+      </ul>
+    </nav>
+  </section>
 </template>
 
 <script>
-import UsuarioForm from "@/components/UsuarioForm.vue"
-import { api } from "@/services.js"
-
 export default {
-  name:"UsuarioEditar",
-  components:{
-    UsuarioForm
-  },
-  methods:{
-    atualizarUsuario(){
-      api.put(`/users/${this.$store.state.user.id}`, this.$store.state.user).then(()=>{
-        this.$store.dispatch("getUsuario")
-        this.$router.push({name: "usuario"})
-      }).catch(erro =>{
-        console.log(erro)
-      })
-    }
-  }
+
 }
 </script>
 
 <style scoped>
 
+.usuario{
+  height: 100vh;
+  width: 100vw;
+  background-color: #fff;
+}
 
-  .usuario{
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    background-color: darkslategray;
-    color: darkslategray;
-  }
+ul{
+  display: flex;
+  gap: 10px;
+}
 
-  .user_info{
-    display: block;
-    margin-top: 20px;
-    background-color: #fff;
-    padding: 20px 50px;
-    border-radius: 5px;
-  }
 
-  ul{
-    display: flex;
-    flex-direction: column;
-  }
-
-  li{
-    display: inline-block;
-    margin: 10px 0;
-    background: #fff;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  span{
-    font-size: 1.2rem;
-  }
   
-  .editar{
-    background-color: darkslategray;
-    color: #fff;
-  }
-
-  .user_info h2{
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
 
 </style>
