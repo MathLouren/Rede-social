@@ -33,7 +33,6 @@ export default{
 
   body{
     overflow: hidden;
-    background-color: darkslategray;
   }
 
   ul{
@@ -51,7 +50,6 @@ export default{
   input{
     display: block;
     width: 400px;
-    max-width: 100%;
     box-shadow: 4px 4px 8px rgba(30, 60, 90, 0.2);
     padding: 20px;
     border: none;
@@ -87,6 +85,10 @@ export default{
   }
   .btn:hover{
     transform: scale(1.1);
+  }
+
+  .editar{
+    background-color: darkslategray;
   }
 
   .title{

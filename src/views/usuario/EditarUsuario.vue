@@ -37,12 +37,9 @@ export default {
 <style scoped>
 
   .usuario{
-    width: 100vw;
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    background-color: darkslategray;
     color: darkslategray;
   }
 
@@ -70,11 +67,6 @@ export default {
 
   span{
     font-size: 1.2rem;
-  }
-  
-  .editar{
-    background-color: darkslategray;
-    color: #fff;
   }
 
   .user_info h2{
