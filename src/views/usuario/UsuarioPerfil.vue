@@ -3,7 +3,7 @@
     <div class="banner_photo">
       <div class="banner">
           <div class="photo">
-
+            
           </div>
       </div>
     </div>
@@ -35,23 +35,28 @@ export default {
 
 .banner{
   margin: 20px auto;
-  width: 60%;
-  height: 200px;
-  border: 1px solid #000;
+  width: 800px;
+  height: 250px;
+  border: 2px solid #000;
   position: relative;
 }
 
 .photo{
   width: 100px;
   height: 100px;
-  border: 1px solid #000;
+  border: 2px solid #000;
+  background: #fff;
   border-radius: 50%;
   position: absolute;
   bottom: 0;
   margin-bottom: -50px;
   margin-left: 10px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 
 .desc{
   margin-top: 60px;
