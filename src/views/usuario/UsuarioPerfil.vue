@@ -9,7 +9,8 @@
     </div>
     <div class="desc">
         <p>O presente é o melhor momento para você ser feliz! A única certeza que temos é do momento que estamos vivendo. Por isso, viva intensamente! Hoje, o vento te abraçará, o sol estará mais atraente e a paz vai invadir seu coração!</p>
-      </div>
+    </div>
+    <div class="country"></div>
   </section>
 </template>
 
