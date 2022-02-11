@@ -2,10 +2,17 @@
   <section class="perfil_container">  
     <div class="banner_photo">
       <div class="banner">
-          <div class="photo">
-            
-          </div>
+        <label for="foto"></label>
+        <input type="file" name="foto" id="foto">
       </div>
+      <div class="photo">
+            <label for="foto"></label>
+            <input type="file" name="foto" id="foto">
+      </div>
+    </div>
+    <div class="avaliation">
+      <div class="like">.</div>
+      <div class="deslike">.</div>
     </div>
     <div class="desc">
         <p>O presente é o melhor momento para você ser feliz! A única certeza que temos é do momento que estamos vivendo. Por isso, viva intensamente! Hoje, o vento te abraçará, o sol estará mais atraente e a paz vai invadir seu coração!</p>
@@ -31,7 +38,8 @@ export default {
 }
 
 .banner_photo{
-  width: 1300px;
+  width: 800px;
+  position: relative;
 }
 
 .banner{
@@ -40,6 +48,9 @@ export default {
   height: 250px;
   border: 2px solid #000;
   position: relative;
+}
+.banner:hover{
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .photo{
@@ -56,6 +67,28 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: -30px;
+}
+.photo label{
+  border-radius: 50%;
+}
+
+input[type="file"]{
+  display: none;
+}
+
+label{
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  background-image: none;
+}
+label:hover{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  background-image: url(./imgs/camera.svg) no-repeat;
 }
 
 
