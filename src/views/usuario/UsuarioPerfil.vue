@@ -61,6 +61,7 @@ export default {
   border: 2px solid #000;
   position: relative;
   transition: 0.4s;
+  border-radius: 2px;
 }
 .banner:hover{
   background-color: rgba(0, 0, 0, 0.1);
