@@ -6,10 +6,12 @@
           <router-link :to="{ name: 'perfil' }"  class="btn editar">Meu perfil</router-link>
         </li>
         <li>
-          <router-link :to="{ name: 'usuario' }" class="btn editar">Editar Usuario</router-link>
+          <router-link :to="{ name: 'usuario' }" class="btn editar"><img src="./imgs/settings.svg">
+          
+          Editar Usuario</router-link>
         </li>
         <li>
-          <router-link :to="{ name: 'notifications' }" class="btn editar position">Notificações <img src="./imgs/bell.svg"></router-link>
+          <router-link :to="{ name: 'notifications' }" class="btn editar position"><img src="./imgs/bell.svg">Notificações</router-link>
         </li>
         <li>
           <button @click.prevent="deslogar" class="btn editar">Deslogar</button>
@@ -41,7 +43,6 @@ export default {
   padding-right: 20px;
   margin: 0 10px 0 20px;
   display: flex;
-  border-right: 1px solid rgb(230, 230, 230);
 }
 
 ul li{
@@ -57,11 +58,11 @@ ul li{
 .position{
   display: flex;
   align-items: center;
-  gap: 10px;
 }
 
 .position img{
   height: 20px;
+  margin-right: 7px;
 }
 
 .router_area{
@@ -74,6 +75,10 @@ ul li{
   .usuario{
     display: flex;
     flex-direction: column;
+  }
+
+  .slidenav{
+    display: none;
   }
 }
 

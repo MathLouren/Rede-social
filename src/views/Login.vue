@@ -1,6 +1,6 @@
 <template>
-  <section class="container_login">
-      <div class="login">
+  <section class="container_form">
+      <div class="form">
             <h2 class="title">Login</h2>
             <form>
                 <input type="text" placeholder="Email" v-model="login.email">
@@ -34,29 +34,10 @@ export default {
 
 <style scoped>
 
-
-    .container_login{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: darkslategray;
-    }
-
     .esqueceu{
         text-align: center;
         cursor: pointer;
-    }
-
-    .login{
-        padding: 40px;
-        box-shadow: 4px 4px 8px rgba(30, 60, 90, 0.4);
-        border-radius: 5px;
-        width: 500px;
-        margin: auto;
-    }
-
-    h2{
-        text-align: center;
+        margin: 5px 0;
     }
 
 </style>

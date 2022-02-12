@@ -1,6 +1,6 @@
 <template>
-  <section class="container_resgister">
-      <div class="resgister">
+  <section class="container_form">
+      <div class="form">
           <h2 class="title">Registrar</h2>
             <UsuarioForm />
             <button class="btn button" @click.prevent="criarUsuario">Criar conta</button>
@@ -40,12 +40,6 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.resgister{
-    box-shadow: 4px 4px 8px rgba(30, 60, 90, 0.4);
-    padding: 40px;
-    border-radius: 5px;
 }
 
 .button{

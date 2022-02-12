@@ -12,7 +12,7 @@
       <div class="location">
         <p><img src="./imgs/map-pin.svg" alt=""></p>
         <p>Rio de janeiro</p>
-        <p>...</p>
+        <p><img src="./imgs/brasil.png" alt="" class="country_img"></p>
       </div>
     </div>
     <div class="info_name">
@@ -62,7 +62,7 @@ export default {
 }
 
 .banner{
-  margin: 20px auto;
+  margin: 10px auto;
   max-width: 800px;
   height: 250px;
   border: 2px solid #000;
@@ -114,6 +114,8 @@ label{
   display: flex;
   justify-content: flex-end;
   font-size: 0.8rem;
+  display: flex;
+  align-items: center;
 }
 
 .location p{
@@ -121,7 +123,7 @@ label{
 }
 
 .desc{
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .info_name{
@@ -140,6 +142,10 @@ label{
 
 .info_name .id{
   text-transform: lowercase;
+}
+
+.country_img{
+  height: 30px;
 }
 
 </style>

@@ -33,16 +33,8 @@ export default{
   }
 
   body{
-    max-width: 1400px;
     margin: auto;
-    padding: 0 10px;
   }
-
-  h2,p{
-    color: darkslategray;
-  }
-
- 
 
   ul{
     list-style: none;
@@ -52,15 +44,11 @@ export default{
     text-decoration: none;
   }
 
-  label{
-    display: block;
-  }
-
   input{
     display: block;
-    width: 400px;
+    width: 100%;
     box-shadow: 4px 4px 8px rgba(30, 60, 90, 0.4);
-    padding: 20px;
+    padding: 15px;
     border: none;
     border-radius: 4px;
     transition: all 0.4s;
@@ -83,13 +71,12 @@ export default{
     font-size: 1rem;
     border: none;
     border-radius: 5px;
-    margin: auto;
     cursor: pointer;
     transition: 0.4s;
     background-color: darkslategray;
     color: #fff;
     text-transform: uppercase;
-    margin: 20px auto;
+    margin: 15px auto;
     text-align: center;
   }
   .btn:hover{
@@ -103,8 +90,23 @@ export default{
   .title{
     text-align: center;
     font-size: 2.2rem;
-    margin: 10px 0 30px 0;
+    margin: 0px 0 30px 0;
   }
+
+  .form{
+      box-shadow: 4px 4px 8px rgba(30, 60, 90, 0.4);
+      padding: 20px;
+      border-radius: 5px;
+      width: 400px;
+  }
+
+  .container_form{
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: darkslategray;
+    }
 
  /*  Animations */
  
@@ -125,6 +127,14 @@ export default{
   .modal-leave-active{
     transition: all 0.2s;
   }
+
+   @media (max-width: 470px){
+
+    .form{
+      width: 100%;
+      margin: 0 10px;
+    }
+  } 
 
 
 </style>
