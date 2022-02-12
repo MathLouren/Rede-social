@@ -33,22 +33,15 @@ export default {
 <style scoped>
 
 .usuario{
-  padding: 0 10px;
+  max-width: 1200px;
   display: flex;
 }
 
 .slidenav{
-  padding: 0 10px;
-  width: 15%;
+  padding-right: 20px;
+  margin: 0 10px 0 20px;
   display: flex;
-}
-
-.router_area{
-  width: 90%;
-}
-
-ul{
-  display: flex;
+  border-right: 1px solid rgb(230, 230, 230);
 }
 
 ul li{
@@ -69,6 +62,12 @@ ul li{
 
 .position img{
   height: 20px;
+}
+
+.router_area{
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 @media (max-width:900px){

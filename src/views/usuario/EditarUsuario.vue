@@ -37,17 +37,18 @@ export default {
 <style scoped>
 
   .usuario{
-    height: 100%;
-    display: flex;
-    justify-content: center;
+    background: red;
     color: darkslategray;
   }
 
   .user_info{
-    display: block;
     background-color: #fff;
-    padding: 20px 50px;
     border-radius: 5px;
+    width: 500px;
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   ul{

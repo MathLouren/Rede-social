@@ -9,7 +9,16 @@
             <label for="foto" @mouseover="photoIMG = true" @mouseleave="photoIMG = false"><img src="./imgs/camera.svg" alt="" v-if="photoIMG"></label>
             <input type="file" name="foto" id="foto">
       </div>
+      <div class="location">
+        <p><img src="./imgs/map-pin.svg" alt=""></p>
+        <p>Rio de janeiro</p>
+        <p>...</p>
+      </div>
     </div>
+    <div class="info_name">
+        <p class="name">Matheus Lourenço</p>
+        <p class="id">@matheuslourenco</p>
+      </div>
     <div class="desc">
         <p>O presente é o melhor momento para você ser feliz! A única certeza que temos é do momento que estamos vivendo. Por isso, viva intensamente! Hoje, o vento te abraçará, o sol estará mais atraente e a paz vai invadir seu coração!</p>
     </div>
@@ -42,21 +51,19 @@ export default {
 <style scoped>
 
 .perfil_container{
-  margin: auto;
   max-width: 800px;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .banner_photo{
-  width: 800px;
+  max-width: 800px;
   position: relative;
 }
 
 .banner{
   margin: 20px auto;
-  width: 800px;
+  max-width: 800px;
   height: 250px;
   border: 2px solid #000;
   position: relative;
@@ -75,7 +82,7 @@ export default {
   border-radius: 50%;
   position: absolute;
   bottom: 0;
-  margin-bottom: -30px;
+  margin-bottom: -10px;
   margin-left: 15px;
   cursor: pointer;
   display: flex;
@@ -103,9 +110,36 @@ label{
   align-items: center;
 }
 
+.location{
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.8rem;
+}
+
+.location p{
+  margin: 0 2px;
+}
 
 .desc{
-  margin-top: 40px;
+  margin-top: 10px;
+}
+
+.info_name{
+  margin-top: 15px;
+}
+
+.info_name p{
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.info_name .name{
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.info_name .id{
+  text-transform: lowercase;
 }
 
 </style>

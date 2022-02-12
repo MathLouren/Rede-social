@@ -32,13 +32,17 @@ export default{
     font-family: "Roboto", sans-serif;
   }
 
+  body{
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 10px;
+  }
+
   h2,p{
     color: darkslategray;
   }
 
-  body{
-    overflow: hidden;
-  }
+ 
 
   ul{
     list-style: none;
