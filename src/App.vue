@@ -22,7 +22,7 @@ export default{
 
   #app{
     margin: auto;
-    width: 80vw;
+    max-width: 1400px;
   }
 
   *{

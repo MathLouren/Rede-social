@@ -36,8 +36,6 @@ export default {
 
 
     .container_login{
-        width: 100%;
-        height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -53,6 +51,12 @@ export default {
         padding: 40px;
         box-shadow: 4px 4px 8px rgba(30, 60, 90, 0.4);
         border-radius: 5px;
+        width: 500px;
+        margin: auto;
+    }
+
+    h2{
+        text-align: center;
     }
 
 </style>
