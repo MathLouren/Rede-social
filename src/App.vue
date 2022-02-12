@@ -48,12 +48,12 @@ export default{
     display: block;
     width: 100%;
     box-shadow: 4px 4px 8px rgba(30, 60, 90, 0.4);
-    padding: 15px;
+    padding: 17px;
     border: none;
     border-radius: 4px;
     transition: all 0.4s;
     outline: none;
-    margin: 10px 0;
+    margin: 12px 0;
     border: 1px solid  #fff;
     font-size: 1rem;
   }
@@ -97,7 +97,7 @@ export default{
       box-shadow: 4px 4px 8px rgba(30, 60, 90, 0.4);
       padding: 20px;
       border-radius: 5px;
-      width: 400px;
+      width: 450px;
   }
 
   .container_form{

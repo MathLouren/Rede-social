@@ -54,6 +54,7 @@ export default {
   max-width: 800px;
   display: flex;
   flex-direction: column;
+  margin: 0 5px;
 }
 
 .banner_photo{

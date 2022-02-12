@@ -2,19 +2,34 @@
   <section class="usuario">
     <nav class="slidenav">
       <ul class="configs">
-         <li>
-          <router-link :to="{ name: 'perfil' }"  class="btn editar">Meu perfil</router-link>
+        <li>
+          <router-link :to="{ name: 'perfil' }"  class="btn editar">
+            <div class="settings">
+              <img src="./imgs/user.svg" alt="">
+              <span>Meu perfil</span>
+            </div>
+          </router-link>
         </li>
         <li>
-          <router-link :to="{ name: 'usuario' }" class="btn editar"><img src="./imgs/settings.svg">
-          
-          Editar Usuario</router-link>
+          <router-link :to="{ name: 'usuario' }" class="btn editar">
+            <div class="settings">
+              <img src="./imgs/settings.svg"><span>Informações</span>
+            </div>
+          </router-link>
         </li>
         <li>
-          <router-link :to="{ name: 'notifications' }" class="btn editar position"><img src="./imgs/bell.svg">Notificações</router-link>
+          <router-link :to="{ name: 'notifications' }" class="btn editar position">
+            <div class="settings">
+              <img src="./imgs/bell.svg"><span>Notificações</span>
+            </div>
+          </router-link>
         </li>
         <li>
-          <button @click.prevent="deslogar" class="btn editar">Deslogar</button>
+          <button @click.prevent="deslogar" class="btn editar">
+            <div class="settings">
+              <img src="./imgs/log-out.svg" alt=""> <span>Deslogar</span>
+            </div>
+          </button>
         </li>
       </ul>
     </nav>
@@ -45,16 +60,18 @@ export default {
   display: flex;
 }
 
-ul li{
-  display: block;
-  width: 100%;
-}
-
 .configs{
   display: flex;
+  align-items: center;
   flex-direction: column;
 }
   
+.settings{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
 .position{
   display: flex;
   align-items: center;
@@ -62,7 +79,6 @@ ul li{
 
 .position img{
   height: 20px;
-  margin-right: 7px;
 }
 
 .router_area{
