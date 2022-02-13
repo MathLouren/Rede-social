@@ -91,6 +91,7 @@ export default{
     text-align: center;
     font-size: 2.2rem;
     margin: 0px 0 30px 0;
+    color: darkslategray;
   }
 
   .form{
