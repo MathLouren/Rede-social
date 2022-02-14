@@ -4,10 +4,33 @@
       <div class="form">
             <nav>
               <h2>Editar Usuário</h2>
-              <UsuarioForm />
-              <div>
-                <button class="btn editar" @click.prevent="atualizarUsuario">Editar Usuario</button>
-              </div>
+                <form>
+                  <div>
+                    <label for="name">Nome</label>
+                    <input type="text" v-model="name" name="name">
+                    <div>
+                      <button class="btn editar" @click.prevent="atualizarUsuario">Mudar Nome</button>
+                    </div>
+                  </div>
+                  <div>
+                    <label for="name">Email</label>
+                    <input type="email" v-model="email" name="email">
+                    <div>
+                      <button class="btn editar" @click.prevent="atualizarUsuario">Mudar email</button>
+                    </div>
+                  </div>
+                 <div>
+                    <label for="password">Senha Atual</label>
+                    <input type="password" name="password" v-model="senhaAtual">
+                 </div>
+                  <div>
+                    <label for="password">Nova Senha</label>
+                    <input type="password" name="password">
+                    <div>
+                      <button class="btn editar" @click.prevent="senhaCheck">Mudar senha</button>
+                    </div>
+                  </div>
+                </form>
             </nav>
         </div>
     </section>
@@ -15,13 +38,22 @@
 </template>
 
 <script>
-import UsuarioForm from "@/components/UsuarioForm.vue"
 import { api } from "@/services.js"
+import { mapFields } from "@/helpers.js"
 
 export default {
   name:"UsuarioEditar",
-  components:{
-    UsuarioForm
+  data(){
+    return{
+      senhaAtual:"",
+    }
+  },
+   computed:{
+        ...mapFields({
+            fields:["id","name","email","password"],
+            base:"user",
+            mutation:"UPDATE_USER"
+        })
   },
   methods:{
     atualizarUsuario(){
@@ -31,7 +63,14 @@ export default {
       }).catch(erro =>{
         console.log(erro)
       })
-    }
+    },
+    senhaCheck(){
+      if(this.senhaAtual === this.$store.state.user.password ){
+        this.atualizarUsuario();
+      }else{
+        console.log('senha errada')
+      }
+    },
   }
 }
 </script>
@@ -39,10 +78,18 @@ export default {
 <style scoped>
 
   .container_infos{
-    margin-top: 20px;
+  width: 450px;
   }
 
-  h2{
-    text-align: center;
+  form{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
   }
+
+  label{
+    font-size: 1.2rem;
+    margin: 5px 0;
+  }
+
 </style>

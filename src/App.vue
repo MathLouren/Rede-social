@@ -32,6 +32,12 @@ export default{
     font-family: "Roboto", sans-serif;
   }
 
+  h2{
+    text-align: center;
+    font-size: 1.8rem;
+    color: darkslategray;
+  }
+
   body{
     margin: auto;
   }
@@ -99,6 +105,7 @@ export default{
       padding: 20px;
       border-radius: 5px;
       width: 450px;
+      margin: 10px 5px;
   }
 
   .container_form{
@@ -129,13 +136,6 @@ export default{
     transition: all 0.2s;
   }
 
-   @media (max-width: 470px){
-
-    .form{
-      width: 100%;
-      margin: 0 10px;
-    }
-  } 
-
+ 
 
 </style>
