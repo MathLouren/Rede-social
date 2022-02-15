@@ -38,8 +38,19 @@
                   <label>Senha</label>
                  <div class="input_editar">
                     <input type="password" v-model="password" class="input_editar">
-                    <span>EDITAR</span>
+                    <span @click="mudarSenha = true">EDITAR</span>
                  </div>
+                  <transition name="modal">
+                        <div class="mudar_container" v-if="mudarSenha" @click="fecharModal">
+                          <div class="modal_change">
+                            <label for="mudarSenha">Editar Senha</label>
+                            <input type="password"  name="mudarSenha" placeholder="Senha Atual">
+                            <input type="password"  name="mudarSenha" placeholder="Nova Senha">
+                            <input type="password"  name="mudarSenha" placeholder="Nova Senha">
+                            <button class="btn" @click.prevent="atualizarUsuario" @click="fecharModal">Mudar Nome</button>
+                          </div>
+                        </div>
+                    </transition>
                 </form>
                   <div>
                     <button class="btn editar" @click.prevent="atualizarUsuario">Atualizar Dados</button>
@@ -62,7 +73,8 @@ export default {
     return{
       senhaAtual:"",
       mudarNome:false,
-      mudarEmail:false
+      mudarEmail:false,
+      mudarSenha:false
     }
   },
    computed:{
@@ -91,7 +103,8 @@ export default {
     fecharModal({target, currentTarget}){
       if(target === currentTarget){
         this.mudarNome = false,
-        this.mudarEmail = false
+        this.mudarEmail = false,
+        this.mudarSenha = false
       }
     }
   },
