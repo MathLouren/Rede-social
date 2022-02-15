@@ -11,19 +11,30 @@
                       <input type="text" v-model="name" name="name">
                       <span @click="mudarNome = true">EDITAR</span>
                     </div>
-                    <div class="mudar_container" v-if="mudarNome" @click="fecharModal">
+                    <transition name="modal">
+                      <div class="mudar_container" v-if="mudarNome" @click="fecharModal">
                       <div class="modal_change">
                         <label for="mudarNome">Editar Nome</label>
                         <input type="text" v-model="name" name="mudarNome" placeholder="Novo Nome">
-                        <button class="btn">Mudar Nome</button>
+                        <button class="btn" @click.prevent="atualizarUsuario" @click="fecharModal">Mudar Nome</button>
                       </div>
                     </div>
+                    </transition>
                   </div>
                   <label for="name">Email</label>
                   <div class="input_editar">
                     <input type="email" v-model="email" name="email" class="input_editar">
-                    <span>EDITAR</span>
+                    <span @click="mudarEmail = true">EDITAR</span>
                   </div>
+                     <transition name="modal">
+                        <div class="mudar_container" v-if="mudarEmail" @click="fecharModal">
+                          <div class="modal_change">
+                            <label for="mudarEmail">Editar email</label>
+                            <input type="text" v-model="email" name="mudarEmail" placeholder="Novo Email">
+                            <button class="btn" @click.prevent="atualizarUsuario" @click="fecharModal">Mudar Nome</button>
+                          </div>
+                        </div>
+                    </transition>
                   <label>Senha</label>
                  <div class="input_editar">
                     <input type="password" v-model="password" class="input_editar">
@@ -50,7 +61,8 @@ export default {
   data(){
     return{
       senhaAtual:"",
-      mudarNome:false
+      mudarNome:false,
+      mudarEmail:false
     }
   },
    computed:{
@@ -76,6 +88,12 @@ export default {
         console.log('senha errada')
       }
     },
+    fecharModal({target, currentTarget}){
+      if(target === currentTarget){
+        this.mudarNome = false,
+        this.mudarEmail = false
+      }
+    }
   },
   watch:{
     senhaAtual(){
@@ -133,7 +151,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.9);
   }
 
   .modal_change{
@@ -144,6 +162,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 5px;
   }
   .modal_change input{
     max-height: 50px;
