@@ -6,9 +6,18 @@
               <h2>Editar Usuário</h2>
                 <form>
                   <label for="name">Nome</label>
-                  <div class="input_editar">
-                    <input type="text" v-model="name" name="name">
-                    <span>EDITAR</span>
+                  <div>
+                    <div class="input_editar">
+                      <input type="text" v-model="name" name="name">
+                      <span @click="mudarNome = true">EDITAR</span>
+                    </div>
+                    <div class="mudar_container" v-if="mudarNome" @click="fecharModal">
+                      <div class="modal_change">
+                        <label for="mudarNome">Editar Nome</label>
+                        <input type="text" v-model="name" name="mudarNome" placeholder="Novo Nome">
+                        <button class="btn">Mudar Nome</button>
+                      </div>
+                    </div>
                   </div>
                   <label for="name">Email</label>
                   <div class="input_editar">
@@ -36,9 +45,12 @@ import { mapFields } from "@/helpers.js"
 
 export default {
   name:"UsuarioEditar",
+  components:{
+  },
   data(){
     return{
       senhaAtual:"",
+      mudarNome:false
     }
   },
    computed:{
@@ -77,7 +89,7 @@ export default {
 
   .container_infos{
     width: 100%;
-    max-width: 750px;
+    max-width: 950px;
     display: flex;
     justify-content: center;
   }
@@ -87,7 +99,7 @@ export default {
     flex-direction: column;
     margin: 10px 0;
     width: 100%;
-    max-width: 700px;
+    height: 100%;
   }
 
   label{
@@ -109,6 +121,36 @@ export default {
 
   .input_editar input{
     padding-right: 90px;
+  }
+
+  .mudar_container{
+    color: #000;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .modal_change{
+    width: 100%;
+    max-width: 500px;
+    padding: 10px 20px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .modal_change input{
+    max-height: 50px;
+    margin: 10px 20px;
+  }
+  .modal_change label{
+    font-size: 1.5rem;
   }
 
 </style>

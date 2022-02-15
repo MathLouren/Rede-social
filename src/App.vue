@@ -114,6 +114,7 @@ export default{
       justify-content: center;
       align-items: center;
       color: darkslategray;
+      background: #fff;
     }
 
  /*  Animations */
