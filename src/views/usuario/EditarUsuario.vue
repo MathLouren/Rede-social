@@ -46,7 +46,7 @@
                             <label for="mudarSenha">Editar Senha</label>
                             <input type="password"  name="mudarSenha" placeholder="Senha Atual">
                             <input type="password"  name="mudarSenha" placeholder="Nova Senha">
-                            <input type="password"  name="mudarSenha" placeholder="Nova Senha">
+                            <input type="password"  name="mudarSenha" placeholder="Nova Senha" v-model="password">
                             <button class="btn" @click.prevent="atualizarUsuario" @click="fecharModal">Mudar Nome</button>
                           </div>
                         </div>

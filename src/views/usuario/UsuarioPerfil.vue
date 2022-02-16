@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="info_name">
-        <p class="name">Matheus Lourenço</p>
+        <p class="name">{{this.$store.state.user.name}}</p>
         <p class="id">@matheuslourenco</p>
       </div>
     <div class="desc">
