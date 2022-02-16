@@ -1,21 +1,22 @@
 <template>
     <section class="container_form">
-        <div class="form" v-if="register">
-            <h2 class="title">Registrar</h2>
-            <UsuarioForm />
-            <button class="btn button" @click.prevent="criarUsuario">Criar conta</button>
-            <router-link class="btn button" to="/">Já possui uma conta? Logar</router-link>
-        </div>
+       <div class="form">
+           <h2>Registro</h2>
+           <label for="date">Informe a data do seu aniversário</label>
+           <input type="date" name="date">
+           <label for="date">Informe a data do seu aniversário</label>
+           <input type="date" name="date">
+       </div>
     </section>      
 </template>
 
 <script>
-import UsuarioForm from "@/components/UsuarioForm.vue"
+
 
 export default {
 name:"DadosUser",
 components:{
-    UsuarioForm
+    
 },
 data(){
         return{
@@ -36,6 +37,16 @@ data(){
 }
 </script>
 
-<style>
+<style scoped>
+
+h2{
+    margin: 20px 0;
+}
+
+label{
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+}
 
 </style>
