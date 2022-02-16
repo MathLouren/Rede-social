@@ -12,7 +12,9 @@ export default new Vuex.Store({
       id:"",
       name:"",
       email:"",
-      password:""
+      password:"",
+      dadosUser: false,
+      InfosUser: false
     }
   },
   mutations: {
@@ -21,6 +23,9 @@ export default new Vuex.Store({
     },
     UPDATE_USER(state, payload){
       state.user = Object.assign(state.user, payload);
+    },
+    UPDATE_DADOS_USER(state, payload){
+      state.user.dadosUser = payload
     }
   },
   actions: {
@@ -31,6 +36,7 @@ export default new Vuex.Store({
       })
     },
     criarUsuario(context, payload){
+      context.commit("UPDATE_DADOS_USER", true)
       context.commit("UPDATE_USER",{id:payload.email})
       api.post('/users',payload)
     }

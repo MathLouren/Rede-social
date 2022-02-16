@@ -1,11 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Login from '../views/Login.vue'
-import Registrar from '../views/Registrar.vue'
+import Login from '../views/registrar/Login.vue'
+import Registrar from '../views/registrar/Registrar.vue'
 import Usuario from '../views/usuario/Usuario.vue'
 import UsuarioPerfil from '../views/usuario/UsuarioPerfil.vue'
 import EditarUsuario from '../views/usuario/EditarUsuario.vue'
 import Notifications from '../views/usuario/Notifications.vue'
+import InfosUser from "../views/registrar/InfosUser.vue"
 
 Vue.use(VueRouter)
 
@@ -22,7 +23,14 @@ const router = new VueRouter({
     {
       path: "/registrar",
       name:"registrar",
-      component: Registrar
+      component: Registrar,
+      children:[
+        {
+          path:"userinfo",
+          name:"UsuarioInfo",
+          component:InfosUser
+        }
+      ]
     },
     {
       path: "/usuario",
@@ -43,7 +51,7 @@ const router = new VueRouter({
           path:"notifications",
           name:"notifications",
           component:Notifications
-        }
+        },
       ]
     },
   ]
