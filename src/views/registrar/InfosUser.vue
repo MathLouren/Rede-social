@@ -21,7 +21,7 @@ export default {
             await this.$store.commit("UPDATE_DADOS_USER", true)
             await this.$store.dispatch("criarUsuario", this.$store.state.user);
             await this.$store.dispatch("getUsuario", this.$store.state.user.email);
-            this.$router.push({ name: "UsuarioInfo" });
+            this.$router.push({ name: "DadosUser" });
            } catch(error){
                console.log(error)
            }

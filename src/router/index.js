@@ -7,6 +7,7 @@ import UsuarioPerfil from '../views/usuario/UsuarioPerfil.vue'
 import EditarUsuario from '../views/usuario/EditarUsuario.vue'
 import Notifications from '../views/usuario/Notifications.vue'
 import InfosUser from "../views/registrar/InfosUser.vue"
+import DadosUser from "../views/registrar/DadosUser.vue"
 
 Vue.use(VueRouter)
 
@@ -29,6 +30,11 @@ const router = new VueRouter({
           path:"userinfo",
           name:"UsuarioInfo",
           component:InfosUser
+        },
+        {
+          path:"dadosUser",
+          name:"DadosUser",
+          component:DadosUser
         }
       ]
     },
