@@ -59,7 +59,7 @@ export default{
     border-radius: 4px;
     transition: all 0.4s;
     outline: none;
-    margin: 12px 0;
+    margin: 15px 0;
     border: 1px solid  #fff;
     font-size: 1rem;
   }
@@ -73,8 +73,8 @@ export default{
 
   .btn{
     display: block;
-    padding: 12px 30px;
-    font-size: 1rem;
+    padding: 15px 30px;
+    font-size: 1.1rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -82,7 +82,7 @@ export default{
     background-color: darkslategray;
     color: #fff;
     text-transform: uppercase;
-    margin: 15px auto;
+    margin: 25px auto;
     text-align: center;
   }
   .btn:hover{
