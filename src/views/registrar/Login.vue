@@ -7,7 +7,7 @@
                 <input type="password" placeholder="Senha" v-model="login.password">
                 <button class="btn" @click.prevent="entrar">Entrar</button>
                 <p class="esqueceu">Esqueceu a senha?</p>
-                <router-link class="btn" to="/registrar">Novo? Criar Conta</router-link>  
+                <router-link class="btn" to="/registrar/userinfo">Novo? Criar Conta</router-link>  
             </form>
       </div>
   </section>
@@ -26,7 +26,7 @@ export default {
     methods:{
         entrar(){
             this.$store.dispatch("getUser", this.login.email)
-            this.$router.push({ name:"usuario" })
+            this.$router.push({ name:"perfil" })
         }
     }
 }

@@ -1,7 +1,7 @@
 <template>
       <div>
         <transition name="modal">
-        <InfosUser v-if="$store.state.user.dadosUser"/>
+        <InfosUser v-if="!$store.state.user.dadosUser"/>
         <DadosUser v-else/>
         </transition>
       </div>
