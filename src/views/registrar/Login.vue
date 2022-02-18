@@ -7,7 +7,6 @@
                 <transition name="modal">
                     <div class="error_input" v-if="$v.email.$error">
                         <ul>
-                            <li>Este campo é requerido</li>
                             <li>Email inválido</li>
                         </ul>
                     </div>
@@ -16,12 +15,11 @@
                 <transition name="modal">
                     <div class="error_input" v-if="$v.password.$error">
                         <ul>
-                            <li>Este campo é requerido</li>
                             <li>Contém no minimo 6 caracteres</li>
                         </ul>
                     </div>
                 </transition>
-                <button class="btn"  @click.prevent="$v.$touch()">Entrar</button>
+                <button class="btn"  @click.prevent="entrar">Entrar</button>
                 <p class="esqueceu">Esqueceu a senha?</p>
                 <router-link class="btn" to="/registrar">Novo? Criar Conta</router-link>  
             </form>
@@ -47,8 +45,12 @@ export default {
     },
     methods:{
         entrar(){
-            this.$store.dispatch("getUser", this.email)
-            this.$router.push({ name:"perfil" })
+            if (!this.$v.$invalid){
+                this.$store.dispatch("getUser", this.email)
+                this.$router.push({ name:"perfil" })
+            }else{
+                this.$v.$touch();
+            }
         }
     }
 }
@@ -85,7 +87,7 @@ export default {
 
     .error_input li{
         font-family: 'Arial';
-        padding: 3px 0;
+        padding: 5px 0;
     }
 
 </style>
