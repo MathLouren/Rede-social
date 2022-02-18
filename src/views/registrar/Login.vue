@@ -15,7 +15,7 @@
                 <transition name="modal">
                     <div class="error_input" v-if="$v.password.$error">
                         <ul>
-                            <li>Contém no minimo 6 caracteres</li>
+                            <li>Deve conter no minimo 6 caracteres</li>
                         </ul>
                     </div>
                 </transition>
@@ -62,32 +62,6 @@ export default {
         text-align: center;
         cursor: pointer;
         margin: 5px 0;
-    }
-
-    .error_input {
-        background: darkslategray;
-        color: #fff;
-        padding: 5px 10px;
-        border-radius: 5px;
-        z-index: 20000;
-        position: relative;
-    }
-
-    .error_input::before{
-        content: '';
-        display: block;
-        position: absolute;
-        top: -10px;
-        width: 0px;
-        height: 0px;
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        border-bottom: 10px solid darkslategray;
-    }
-
-    .error_input li{
-        font-family: 'Arial';
-        padding: 5px 0;
     }
 
 </style>
