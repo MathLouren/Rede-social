@@ -12,7 +12,9 @@ export default new Vuex.Store({
       id:"",
       name:"",
       email:"",
+      date:"",
       password:"",
+      user_id:"",
       dadosUser: false,
       InfosUser: false
     }

@@ -102,13 +102,14 @@ export default{
 
   .form{
       box-shadow: 4px 4px 8px rgba(30, 60, 90, 0.4);
-      padding: 20px;
+      padding: 20px 30px;
       border-radius: 5px;
       width: 450px;
-      margin: 10px 5px;
+      margin: 20px 5px;
   }
 
   .container_form{
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
