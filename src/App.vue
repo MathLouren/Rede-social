@@ -109,7 +109,6 @@ export default{
   }
 
   .container_form{
-      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;

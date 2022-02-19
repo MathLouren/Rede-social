@@ -21,7 +21,7 @@
                         <li>Senha precisa ter no minimo 7 caracteres</li>
                     </ul>
               </div>
-        <input type="password" name="senha" placeholder="Senha" v-model="confirmation_password">
+        <input type="password" name="senha" placeholder="Repita a senha" v-model="confirmation_password">
               <div class="error_input" v-if="$v.confirmation_password.$error">
                     <ul>
                         <li>As senhas não coincidem</li>
