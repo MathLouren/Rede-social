@@ -14,19 +14,7 @@
                     <ul>
                         <li>Email inválido</li>
                     </ul>
-                </div>
-              <input type="password" name="senha" placeholder="Senha" v-model="password">
-                <div class="error_input" v-if="$v.email.$error">
-                      <ul>
-                          <li>Senha precisa ter no minimo 7 caracteres</li>
-                      </ul>
-                </div>
-              <input type="password" name="senha" placeholder="Repita a senha" v-model="confirmation_password">
-                <div class="error_input" v-if="$v.confirmation_password.$error">
-                      <ul>
-                          <li>As senhas não coincidem</li>
-                      </ul>
-                </div>      
+                </div>   
                 <span>Sua data de nascimento</span>
                 <input type="date" v-model="date">
                 <div class="error_input" v-if="$v.date.$error">
@@ -41,8 +29,22 @@
                           <li>Máximo de 10 caracteres</li>
                       </ul>
                 </div>
-                <button class="btn button" @click.prevent="validarUsuario">Criar conta</button>
-                <router-link class="btn button" to="/">Já possui uma conta? Logar</router-link>
+                <slot>
+                  <input type="password" name="senha" placeholder="Senha" v-model="password">
+                <div class="error_input" v-if="$v.email.$error">
+                      <ul>
+                          <li>Senha precisa ter no minimo 7 caracteres</li>
+                      </ul>
+                </div>
+              <input type="password" name="senha" placeholder="Repita a senha" v-model="confirmation_password">
+                <div class="error_input" v-if="$v.confirmation_password.$error">
+                      <ul>
+                          <li>As senhas não coincidem</li>
+                      </ul>
+                </div>
+                  <button class="btn button" @click.prevent="validarUsuario">Criar conta</button>
+                  <router-link class="btn button" to="/">Já possui uma conta? Logar</router-link>
+                </slot>
                 </form>
       </div>
   </section>
@@ -53,6 +55,7 @@ import { required , email , minLength , maxLength , sameAs} from 'vuelidate/lib/
 import { mapFields } from "@/helpers.js"
 
 export default {
+  name:"registrar",
   data(){
     return{
       confirmation_password:""

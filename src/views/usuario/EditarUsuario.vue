@@ -1,62 +1,34 @@
 <template>
   <transition name="modal">
     <section class="container_infos">
-      <div class="form">
-            <nav>
-              <h2>Editar Usuário</h2>
-                <form>
-                  <label for="name">Nome</label>
-                  <div>
-                    <div class="input_editar">
-                      <input type="text" v-model="name" name="name">
-                      <span @click="mudarNome = true">EDITAR</span>
-                    </div>
-                    <transition name="modal">
-                      <div class="mudar_container" v-if="mudarNome" @click="fecharModal">
-                      <div class="modal_change">
-                        <label for="mudarNome">Editar Nome</label>
-                        <input type="text" v-model="name" name="mudarNome" placeholder="Novo Nome">
-                        <button class="btn" @click.prevent="atualizarUsuario" @click="fecharModal">Mudar Nome</button>
-                      </div>
-                    </div>
-                    </transition>
-                  </div>
-                  <label for="name">Email</label>
-                  <div class="input_editar">
-                    <input type="email" v-model="email" name="email" class="input_editar">
-                    <span @click="mudarEmail = true">EDITAR</span>
-                  </div>
-                     <transition name="modal">
-                        <div class="mudar_container" v-if="mudarEmail" @click="fecharModal">
-                          <div class="modal_change">
-                            <label for="mudarEmail">Editar email</label>
-                            <input type="text" v-model="email" name="mudarEmail" placeholder="Novo Email">
-                            <button class="btn" @click.prevent="atualizarUsuario" @click="fecharModal">Mudar Nome</button>
-                          </div>
-                        </div>
-                    </transition>
-                  <label>Senha</label>
-                 <div class="input_editar">
-                    <input type="password" v-model="password" class="input_editar">
-                    <span @click="mudarSenha = true">EDITAR</span>
-                 </div>
-                  <transition name="modal">
-                        <div class="mudar_container" v-if="mudarSenha" @click="fecharModal">
-                          <div class="modal_change">
-                            <label for="mudarSenha">Editar Senha</label>
-                            <input type="password"  name="mudarSenha" placeholder="Senha Atual">
-                            <input type="password"  name="mudarSenha" placeholder="Nova Senha">
-                            <input type="password"  name="mudarSenha" placeholder="Nova Senha" v-model="password">
-                            <button class="btn" @click.prevent="atualizarUsuario" @click="fecharModal">Mudar Nome</button>
-                          </div>
-                        </div>
-                    </transition>
-                </form>
-                  <div>
-                    <button class="btn editar" @click.prevent="atualizarUsuario">Atualizar Dados</button>
-                  </div>
-            </nav>
-        </div>
+      <Registrar>
+        <slot>
+          <div class="password">
+            <input type="password" v-model="password">
+            <span @click="mudarSenha = true">EDITAR</span>
+            <div class="passwordModal" v-if="mudarSenha">
+              <div class="container_password_change">
+                  <h2>Mudar senha</h2>
+                <div class="passwordChange">
+                  <input type="password" placeholder="Senha atual">
+                  <img src="./imgs/eye-off.svg" alt="" @click="passwordView">
+                </div>
+                <div class="passwordChange">
+                  <input type="password" placeholder="Senha atual">
+                  <img src="./imgs/eye-off.svg" alt="" @click="passwordView">
+                </div>
+                <div class="passwordChange">
+                  <input type="password" placeholder="Senha atual">
+                  <img src="./imgs/eye-off.svg" alt="" @click="passwordView">
+                </div>
+                <button class="btn">Mudar senha</button>
+              </div>
+            </div>
+            
+          </div>
+          <button class="btn button" @click.prevent="atualizarUsuario">Editar conta</button>
+        </slot>
+      </Registrar>
     </section>
   </transition>
 </template>
@@ -64,10 +36,12 @@
 <script>
 import { api } from "@/services.js"
 import { mapFields } from "@/helpers.js"
+import Registrar from "@/views/registrar/Registrar.vue"
 
 export default {
   name:"UsuarioEditar",
   components:{
+    Registrar
   },
   data(){
     return{
@@ -79,7 +53,7 @@ export default {
   },
    computed:{
         ...mapFields({
-            fields:["id","name","email","password"],
+            fields:["id","name","email","password","user_id"],
             base:"user",
             mutation:"UPDATE_USER"
         })
@@ -104,15 +78,10 @@ export default {
       if(target === currentTarget){
         this.mudarNome = false,
         this.mudarEmail = false,
-        this.mudarSenha = false
+        this.mudarSenha = true
       }
-    }
+    },
   },
-  watch:{
-    senhaAtual(){
-      this.senhaCheck()
-    }
-  }
 }
 </script>
 
@@ -183,6 +152,45 @@ export default {
   }
   .modal_change label{
     font-size: 1.5rem;
+  }
+
+  .password{
+    display: flex;
+    align-items: center;
+  }
+  .password span{
+    cursor: pointer;
+    margin-left: -65px;
+  }
+
+  .passwordModal{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  .container_password_change{
+    padding: 20px;
+    background: #fff;
+    width: 500px;
+    max-width: 450px;
+  }
+
+  .passwordChange{
+    display: flex;
+    align-items: center;
+  }
+
+  .passwordChange img{
+    margin-left: -50px;
+    cursor: pointer;
   }
 
 </style>

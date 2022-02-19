@@ -9,15 +9,13 @@
             <label for="foto" @mouseover="photoIMG = true" @mouseleave="photoIMG = false"><img src="./imgs/camera.svg" alt="" v-if="photoIMG"></label>
             <input type="file" name="foto" id="foto">
       </div>
-      <div class="location">
-        <p><img src="./imgs/map-pin.svg" alt=""></p>
-        <p>Rio de janeiro</p>
-        <p><img src="./imgs/brasil.png" alt="" class="country_img"></p>
+      <div class="years">
+        <p>Nasceu em {{this.$store.state.user.date}}</p>
       </div>
     </div>
     <div class="info_name">
         <p class="name">{{this.$store.state.user.name}}</p>
-        <p class="id">@matheuslourenco</p>
+        <p class="id">@{{this.$store.state.user.user_id}}</p>
       </div>
     <div class="desc">
         <p>O presente é o melhor momento para você ser feliz! A única certeza que temos é do momento que estamos vivendo. Por isso, viva intensamente! Hoje, o vento te abraçará, o sol estará mais atraente e a paz vai invadir seu coração!</p>
@@ -111,15 +109,15 @@ label{
   align-items: center;
 }
 
-.location{
+.years{
   display: flex;
   justify-content: flex-end;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   display: flex;
   align-items: center;
 }
 
-.location p{
+.years p{
   margin: 0 2px;
 }
 
@@ -133,7 +131,6 @@ label{
 
 .info_name p{
   margin: 5px 0;
-  cursor: pointer;
 }
 
 .info_name .name{
